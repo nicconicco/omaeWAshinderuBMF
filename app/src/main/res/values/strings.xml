@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BitcoinMercadoFacil</string>
+    <string name="bitcoin_mercado_facil">Bitcoin Mercado Fácil</string>
+    <string name="navigation_drawer_open">nav open</string>
+    <string name="navigation_drawer_close">nav close</string>
+    <string name="action_settings">Settings</string>
+    <string name="detalhe_da_moeda">Detalhe da moeda</string>
+</resources>

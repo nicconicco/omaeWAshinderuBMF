@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Features.DetailCoin.Activity.DetailMoneyActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:id="@+id/btnFavoriteCoin"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/cinza_3"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="3dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:cardUseCompatPadding="false">
+
+                        <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Favoritar Moeda"
+                            android:textColor="@color/preto_2"
+                            android:textSize="16sp" />
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/cinza_3"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="3dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:cardUseCompatPadding="false">
+
+                        <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Calcular compra"
+                            android:textColor="@color/preto_2"
+                            android:textSize="16sp" />
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:foreground="?attr/selectableItemBackground"
+                        app:cardBackgroundColor="@color/cinza_3"
+                        app:cardCornerRadius="3dp"
+                        app:cardElevation="3dp"
+                        app:cardPreventCornerOverlap="false"
+                        app:cardUseCompatPadding="false">
+
+                        <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Comparar com\noutras moedas"
+                            android:textColor="@color/preto_2"
+                            android:textSize="16sp" />
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+
+                <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="2"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/cinza_3"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="false">
+
+                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Avisar quando esta moeda ultrapassar uma porcentagem"
+                        android:textColor="@color/preto_2"
+                        android:textSize="16sp" />
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/cinza_3"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="false">
+
+                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="METER O LOKO"
+                        android:textColor="@color/preto_2"
+                        android:textSize="16sp" />
+
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/btnHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/cinza_3"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp"
+                    app:cardPreventCornerOverlap="false"
+                    app:cardUseCompatPadding="false">
+
+                    <LinearLayout
+                        android:id="@+id/btnDetail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:orientation="horizontal"
+                        android:paddingLeft="17dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:baselineAligned="false"
+                            android:orientation="vertical"
+                            android:paddingBottom="20dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginTop="16dp"
+                                android:orientation="horizontal"
+                                android:paddingBottom="10dp">
+
+                                <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                                    android:id="@+id/tColocacao"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="#"
+                                    android:textColor="@color/green_2"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/imgIcone"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="9dp"
+                                    android:gravity="center|left"
+                                    android:orientation="vertical">
+
+                                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                                        android:id="@+id/tNomeMoeda"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:minWidth="120dp"
+
+                                        android:text="6"
+                                        android:textColor="@color/preto_2"
+                                        android:textSize="24sp"
+                                        android:textStyle="bold" />
+
+                                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                                        android:id="@+id/tChange"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+
+                                        android:text="7"
+                                        android:textColor="@color/preto_2"
+                                        android:textSize="28sp"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/tGraphic"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:layout_marginRight="20dp"
+                                    android:scaleType="fitXY" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Preço em última consulta: "
+                                        android:textColor="@color/preto_2"
+                                        android:textSize="16sp" />
+
+                                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                                        android:id="@+id/tPrice"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="2"
+                                        android:textColor="@color/preto_2"
+                                        android:textSize="24sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Capital de Mercado:"
+                                        android:textColor="@color/preto_2"
+                                        android:textSize="16sp" />
+
+                                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                                        android:id="@+id/tMarket"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="2"
+                                        android:textColor="@color/preto_2"
+                                        android:textSize="24sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Volume nas últimas 24h: "
+                                        android:textColor="@color/preto_2"
+                                        android:textSize="16sp" />
+
+                                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                                        android:id="@+id/tVolume"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="2"
+                                        android:textColor="@color/preto_2"
+                                        android:textSize="24sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Ações circulando no momento: "
+                                        android:textColor="@color/preto_2"
+                                        android:textSize="16sp" />
+
+                                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                                        android:id="@+id/tSupply"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="2"
+                                        android:textColor="@color/preto_2"
+                                        android:textSize="24sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="preto_2">#474747</color>
+    <color name="cinza_3">#F1F1F1</color>
+    <color name="green">#0f0</color>
+    <color name="green_2">#99CC00</color>
+    <color name="neon_vermelho">#ee5744</color>
+    <color name="white">#ffff</color>
+    <color name="cinza_shape">#ababab</color>
+    <color name="cinza_4">#8C8C8C</color>
+    <color name="laranja">#f9a825</color>
+    <color name="preto">#000000</color>
+    <color name="primary">#1565c0</color>
+
+</resources>

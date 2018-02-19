@@ -1,0 +1,24 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeManager" parent="BaseAppThemeManager" />
+    <!-- Tema-base -->
+    <style name="BaseAppThemeManager" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Cor primária do aplicativo -->
+        <item name="colorPrimary">@color/white</item>
+        <!-- Variação escura da cor primária para a status bar e contextual app bars -->
+        <item name="colorPrimaryDark">@color/laranja</item>
+        <!-- Cor de acentuação para as views (checkbox, textfield etc.) -->
+        <item name="colorAccent">@color/cinza_4</item>
+        <!-- Cor para o efeito ripple -->
+        <item name="colorControlHighlight">#f1f1f1</item>
+    </style>
+
+</resources>
