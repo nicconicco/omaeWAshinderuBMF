@@ -1,11 +1,11 @@
 package com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Presenter
 
+import android.support.v4.app.Fragment
 import br.com.livroandroid.carros.extensions.toJson
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.DetailCoin.Model.Const.HTML
-import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Fragment.JsoupHtmlFragment
-import com.cognizant.dor.Common.Extensions.task.startTask
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Model.Coin
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Model.HttpService.JsoupService
+import com.cognizant.dor.Common.Extensions.task.startTask
 import com.nico.projetopadroesnico.Common.Extension.isNetworkAvailable
 import org.jsoup.nodes.Document
 import timber.log.Timber
@@ -37,7 +37,7 @@ class JsoupHtmlPresenter : JsoupHtmlContract.Presenter {
     override fun destroy() {
     }
 
-    override fun loadByFlagSearch(fragment: JsoupHtmlFragment, flag: Int) {
+    override fun loadByFlagSearch(fragment: Fragment, flag: Int) {
         if(!RUNNING_TASK) {
             when (flag) {
                 0 -> {
@@ -59,7 +59,7 @@ class JsoupHtmlPresenter : JsoupHtmlContract.Presenter {
         }
     }
 
-    override fun loadHtml(fragment: JsoupHtmlFragment) {
+    override fun loadHtml(fragment: Fragment) {
         FLAG_SEARCH = 0
 
         this.count = this.count + 20
@@ -94,7 +94,7 @@ class JsoupHtmlPresenter : JsoupHtmlContract.Presenter {
         }
     }
 
-    override fun loadHighPrice(fragment: JsoupHtmlFragment) {
+    override fun loadHighPrice(fragment: Fragment) {
         FLAG_SEARCH = 1
 
         this.count = this.count + 20
@@ -128,7 +128,7 @@ class JsoupHtmlPresenter : JsoupHtmlContract.Presenter {
             }
         }
     }
-    override fun loadLowPrice(fragment: JsoupHtmlFragment) {
+    override fun loadLowPrice(fragment: Fragment) {
         FLAG_SEARCH = 2
 
         this.count = this.count + 20
@@ -162,7 +162,7 @@ class JsoupHtmlPresenter : JsoupHtmlContract.Presenter {
             }
         }
     }
-    override fun loadMaxChange(fragment: JsoupHtmlFragment) {
+    override fun loadMaxChange(fragment: Fragment) {
         FLAG_SEARCH = 4
 
         this.count = this.count + 20
@@ -196,7 +196,7 @@ class JsoupHtmlPresenter : JsoupHtmlContract.Presenter {
             }
         }
     }
-    override fun loadLowChange(fragment: JsoupHtmlFragment) {
+    override fun loadLowChange(fragment: Fragment) {
         FLAG_SEARCH = 3
 
         this.count = this.count + 20

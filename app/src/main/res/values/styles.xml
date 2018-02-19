@@ -14,11 +14,12 @@
         <!-- Cor primária do aplicativo -->
         <item name="colorPrimary">@color/white</item>
         <!-- Variação escura da cor primária para a status bar e contextual app bars -->
-        <item name="colorPrimaryDark">@color/laranja</item>
+        <item name="colorPrimaryDark">@color/verde_oscuro</item>
         <!-- Cor de acentuação para as views (checkbox, textfield etc.) -->
         <item name="colorAccent">@color/cinza_4</item>
         <!-- Cor para o efeito ripple -->
         <item name="colorControlHighlight">#f1f1f1</item>
     </style>
+
 
 </resources>

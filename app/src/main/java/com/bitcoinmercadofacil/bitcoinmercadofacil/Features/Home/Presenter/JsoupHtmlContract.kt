@@ -1,5 +1,6 @@
 package com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Presenter
 
+import android.support.v4.app.Fragment
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Fragment.JsoupHtmlFragment
 import com.nico.projetopadroesnico.Common.Presenter.BasePresenter
 import com.nico.projetopadroesnico.Common.Presenter.BaseView
@@ -14,12 +15,12 @@ class JsoupHtmlContract {
     }
 
     interface Presenter : BasePresenter<View> {
-        fun loadByFlagSearch(fragment: JsoupHtmlFragment, flag: Int)
-        fun loadHtml(fragment: JsoupHtmlFragment)
-        fun loadLowPrice(fragment: JsoupHtmlFragment)
-        fun loadMaxChange(fragment: JsoupHtmlFragment)
-        fun loadLowChange(fragment: JsoupHtmlFragment)
-        fun loadHighPrice(jsoupHtmlFragment: JsoupHtmlFragment)
+        fun loadByFlagSearch(fragment: Fragment, flag: Int)
+        fun loadHtml(fragment: Fragment)
+        fun loadLowPrice(fragment: Fragment)
+        fun loadMaxChange(fragment: Fragment)
+        fun loadLowChange(fragment: Fragment)
+        fun loadHighPrice(jsoupHtmlFragment: Fragment)
     }
 
 }

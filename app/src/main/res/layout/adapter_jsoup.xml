@@ -54,13 +54,8 @@
                         android:textSize="24sp"
                         android:textStyle="bold" />
 
-                    <ImageView
-                        android:id="@+id/imgIcone"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp" />
-
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="9dp"
                         android:gravity="center|left"
@@ -70,7 +65,6 @@
                             android:id="@+id/tNomeMoeda"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:minWidth="120dp"
 
                             android:text="6"
                             android:textColor="@color/preto_2"
@@ -88,6 +82,17 @@
                             android:textSize="28sp" />
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"></LinearLayout>
+                    <ImageView
+                        android:src="@drawable/row_dollar_up"
+                        android:layout_gravity="right"
+                        android:id="@+id/imgIcone"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -100,7 +105,7 @@
                         android:scaleType="fitXY"
                         android:layout_marginRight="20dp"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"/>
+                        android:layout_height="50dp"/>
 
                 </LinearLayout>
 
@@ -118,16 +123,18 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Preço em última consulta: "
-                            android:textColor="@color/preto_2"
-                            android:textSize="16sp" />
+                            android:textColor="@color/verde_letras"
+                            android:textStyle="bold"
+                            android:textSize="20sp" />
 
                         <com.nico.projetopadroesnico.Common.View.RobotoTextView
                             android:id="@+id/tPrice"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="2"
-                            android:textColor="@color/preto_2"
-                            android:textSize="24sp" />
+                            android:textStyle="bold"
+                            android:textColor="@color/verde_letras"
+                            android:textSize="26sp" />
                     </LinearLayout>
 
                 </LinearLayout>

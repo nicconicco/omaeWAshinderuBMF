@@ -51,7 +51,7 @@ class JsoupAdapter(val context: Context, val list: List<Coin>, val callback: onC
         }
 
         view.tChange.text = coin.changeString
-        view.tPrice.text = coin.priceString
+        view.tPrice.text = coin.priceString?.replace("$", "$ ")
 
         view.btnDetail.setOnClickListener {
             callback.onClick(coin)

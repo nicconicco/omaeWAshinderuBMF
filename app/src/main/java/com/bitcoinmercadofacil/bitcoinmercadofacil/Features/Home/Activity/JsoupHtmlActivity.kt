@@ -2,6 +2,7 @@ package com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Activity
 
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
@@ -12,6 +13,9 @@ import com.cognizant.dor.Common.Extensions.addFragment
 import com.cognizant.dor.Common.Extensions.setupToolbar
 import com.nico.projetopadroesnico.Common.Activity.BaseActivity
 import android.view.Menu
+import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.PlusPrice.Fragment.PlusPriceFragment
+import com.cognizant.dor.Common.Extensions.replace
+import kotlinx.android.synthetic.main.header_menu_side.*
 
 
 class JsoupHtmlActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -55,6 +59,16 @@ class JsoupHtmlActivity : BaseActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
         val navigationView = findViewById<NavigationView>(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
+
+        btn1.setOnClickListener {
+            replace(R.id.containerPrincipal, JsoupHtmlFragment())
+            drawer?.closeDrawer(GravityCompat.START)
+        }
+
+        btn2.setOnClickListener {
+            replace(R.id.containerPrincipal, PlusPriceFragment())
+            drawer?.closeDrawer(GravityCompat.START)
+        }
     }
 
     private fun initFragmentInActivity(savedInstanceState: Bundle?) {

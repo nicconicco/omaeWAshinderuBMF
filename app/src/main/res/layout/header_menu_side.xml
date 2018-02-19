@@ -48,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="Acessar seu login" />
+        android:text="Mercado Global" />
     <TextView
         android:layout_marginTop="5dp"
        android:layout_marginLeft="10dp"
@@ -61,5 +61,5 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="Acessar seu login" />
+        android:text="Maior moeda" />
 </LinearLayout>

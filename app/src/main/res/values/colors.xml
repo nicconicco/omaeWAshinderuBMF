@@ -14,5 +14,9 @@
     <color name="laranja">#f9a825</color>
     <color name="preto">#000000</color>
     <color name="primary">#1565c0</color>
+    <color name="verde_oscuro">#004D40</color>
+    <color name="verde_claro">#64FFDA</color>
+    <color name="verde_mediano">#1DE9B6</color>
+    <color name="verde_letras">#009688</color>
 
 </resources>
