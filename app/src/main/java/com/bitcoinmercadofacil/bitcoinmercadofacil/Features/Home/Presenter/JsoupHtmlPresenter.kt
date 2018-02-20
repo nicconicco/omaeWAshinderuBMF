@@ -231,7 +231,7 @@ class JsoupHtmlPresenter : JsoupHtmlContract.Presenter {
         }
     }
 
-    private fun updateView(listCoins: MutableList<Coin>) {
+    private fun updateView(listCoins: List<Coin>) {
         RUNNING_TASK = false
         Timber.d("Lista final:\n${listCoins.toJson()}")
         view?.hidePorgress()

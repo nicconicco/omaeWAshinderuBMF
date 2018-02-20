@@ -28,16 +28,15 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/laranja"
         android:fitsSystemWindows="true">
 
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <include layout="@layout/header_menu_side" />
@@ -45,8 +44,8 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerMenuSide"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/green_2"></android.support.v7.widget.RecyclerView>
+                    android:layout_height="match_parent"
+                    ></android.support.v7.widget.RecyclerView>
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
     </android.support.design.widget.NavigationView>

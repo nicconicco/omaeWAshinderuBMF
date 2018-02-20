@@ -47,23 +47,7 @@ class PlusPriceFragment : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.
 
     private fun initViewButtons() {
         btnAtualizar.setOnClickListener {
-            presenter.loadHtml(this)
-        }
-
-        btnHighPrice.setOnClickListener {
             presenter.loadHighPrice(this)
-        }
-
-        btnLowPrice.setOnClickListener {
-            presenter.loadLowPrice(this)
-        }
-
-        btnLowChange.setOnClickListener {
-            presenter.loadLowChange(this)
-        }
-
-        btnHighChange.setOnClickListener {
-            presenter.loadMaxChange(this)
         }
     }
 
@@ -71,7 +55,7 @@ class PlusPriceFragment : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.
     private fun initPresenter() {
         presenter = JsoupHtmlPresenter()
         presenter.attachView(this)
-        presenter.loadHtml(this)
+        presenter.loadHighPrice(this)
     }
 
     private fun initRecyclerView() {
@@ -91,7 +75,7 @@ class PlusPriceFragment : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.
         presenter.loadByFlagSearch(this, presenter.FLAG_SEARCH)
     }
 
-    override fun showParseHtml(listCoin: MutableList<Coin>) {
+    override fun showParseHtml(listCoin: List<Coin>) {
         this.list = listCoin
         context?.let {
             listCriptoMoedas.adapter = JsoupAdapter(it, this.list, this)

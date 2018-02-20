@@ -11,7 +11,7 @@ class JsoupHtmlContract {
     interface View : BaseView {
         fun showProgress()
         fun hidePorgress()
-        fun showParseHtml(listCoins: MutableList<Coin>)
+        fun showParseHtml(listCoins: List<Coin>)
     }
 
     interface Presenter : BasePresenter<View> {

@@ -7,7 +7,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/verde_claro"
         android:orientation="vertical"
         android:visibility="visible">
 
@@ -26,27 +25,27 @@
             <LinearLayout
                 android:id="@+id/btnAtualizar"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:orientation="horizontal"
                 android:background="@color/white">
 
                 <ImageView
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/shape_azul"
-                    android:scaleType="fitXY"
                     android:src="@drawable/row_dollar_up"
                     android:layout_width="50dp" />
 
                 <com.nico.projetopadroesnico.Common.View.RobotoTextView
                     android:id="@+id/btnHighPrice"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:background="@color/white"
                     android:gravity="center|left"
                     android:paddingLeft="10dp"
-                    android:text="Mostrar maior valorização de moeda"
+                    android:text="Atualizar menor valorização de moeda"
                     android:textColor="@color/verde_letras"
-                    android:textSize="18sp" />
+                    android:textSize="21sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -109,8 +108,7 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/listCriptoMoedas"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#64FFDA" />
+                android:layout_height="match_parent" />
 
             <ProgressBar
                 android:id="@+id/progressBarCoin"

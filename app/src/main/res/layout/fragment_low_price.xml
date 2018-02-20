@@ -16,19 +16,38 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_width="match_parent"
+            android:orientation="horizontal"
             android:layout_height="wrap_content"
             android:background="@color/laranja"
             android:padding="1dp">
 
-            <com.nico.projetopadroesnico.Common.View.RobotoTextView
+
+            <LinearLayout
                 android:id="@+id/btnAtualizar"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@color/white"
-                android:gravity="center"
-                android:text="Atualizar valores"
-                android:textColor="@color/verde_letras"
-                android:textSize="26sp" />
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:background="@color/white">
+
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:src="@drawable/row_dollar_down"
+                    android:layout_width="50dp" />
+
+                <com.nico.projetopadroesnico.Common.View.RobotoTextView
+                    android:id="@+id/btnHighPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center|left"
+                    android:paddingLeft="10dp"
+                    android:text="Atualizar menor valorização de moeda"
+                    android:textColor="@color/verde_letras"
+                    android:textSize="21sp" />
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -37,20 +56,6 @@
             android:layout_marginBottom="10dp"
             android:orientation="vertical"
             android:visibility="gone">
-
-
-            <ImageView
-                android:id="@+id/btnHighPrice"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/shape_azul"
-                android:scaleType="fitXY"
-                android:src="@drawable/row_dollar_up"
-                android:text="HIGH PRICE" />
 
 
             <ImageView

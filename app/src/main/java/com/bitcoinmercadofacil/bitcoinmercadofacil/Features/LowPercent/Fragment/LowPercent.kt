@@ -1,4 +1,4 @@
-package com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Fragment
+package com.bitcoinmercadofacil.bitcoinmercadofacil.Features.LowPercent.Fragment
 
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
@@ -8,21 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import br.com.livroandroid.carros.extensions.toJson
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.DetailCoin.Activity.DetailMoneyActivity
-import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.DetailCoin.Model.Const.COIN
+import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.DetailCoin.Model.Const
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Model.Coin
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Presenter.JsoupHtmlContract
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Presenter.JsoupHtmlPresenter
 import com.bitcoinmercadofacil.bitcoinmercadofacil.R
-import com.cognizant.dor.Common.Extensions.toast
 import com.nico.projetopadroesnico.Common.Extension.goneView
 import com.nico.projetopadroesnico.Common.Extension.showView
 import com.nico.projetopadroesnico.Common.Fragment.BaseFragment
 import com.nico.projetopadroesnico.Common.Util.InfiniteScrollListener
 import com.nico.projetopadroesnico.Features.JSoupHtml.Adapter.JsoupAdapter
-import kotlinx.android.synthetic.main.fragment_jsoup_html.*
+import kotlinx.android.synthetic.main.fragment_plus_price.*
 import org.jetbrains.anko.startActivity
 
-class JsoupHtmlFragment : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.onClickDetail{
+class LowPercent : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.onClickDetail{
 
     override fun showProgress() {
         showView(progressBarCoin)
@@ -36,7 +35,7 @@ class JsoupHtmlFragment : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.
     lateinit var presenter: JsoupHtmlPresenter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, icicle: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_jsoup_html, container, false)
+        return inflater.inflate(R.layout.fragment_low_percent, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -48,23 +47,7 @@ class JsoupHtmlFragment : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.
 
     private fun initViewButtons() {
         btnAtualizar.setOnClickListener {
-            presenter.loadHtml(this)
-        }
-
-        btnHighPrice.setOnClickListener {
-            presenter.loadHighPrice(this)
-        }
-
-        btnLowPrice.setOnClickListener {
-            presenter.loadLowPrice(this)
-        }
-
-        btnLowChange.setOnClickListener {
             presenter.loadLowChange(this)
-        }
-
-        btnHighChange.setOnClickListener {
-            presenter.loadMaxChange(this)
         }
     }
 
@@ -72,7 +55,7 @@ class JsoupHtmlFragment : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.
     private fun initPresenter() {
         presenter = JsoupHtmlPresenter()
         presenter.attachView(this)
-        presenter.loadHtml(this)
+        presenter.loadLowChange(this)
     }
 
     private fun initRecyclerView() {
@@ -100,6 +83,6 @@ class JsoupHtmlFragment : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.
     }
 
     override fun onClick(coin: Coin) {
-        context?.startActivity<DetailMoneyActivity>(COIN to coin.toJson())
+        context?.startActivity<DetailMoneyActivity>(Const.COIN to coin.toJson())
     }
 }

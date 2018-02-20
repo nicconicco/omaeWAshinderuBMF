@@ -12,7 +12,7 @@ import java.util.*
 object JsoupService {
     val MAX = 200
 
-    var list: MutableList<Coin>? = mutableListOf()
+    var list: MutableList<Coin> = mutableListOf()
 
     fun getHtml(html: String): Document? {
         return Jsoup.connect(html).get()
@@ -55,8 +55,6 @@ object JsoupService {
         var listCoins = mutableListOf<Coin>()
         childNodes?.let {
             val coins = it[0].childNodes()
-
-            Timber.d("COINS: ${coins.size} - COUNTS: $count")
 
             var count = count
             if (coins.size < count) {
@@ -136,51 +134,41 @@ object JsoupService {
         return listCoins
     }
 
-    fun convertToObjectHtmlHighPrice(doc: Document, count: Int): MutableList<Coin> {
+    fun convertToObjectHtmlHighPrice(doc: Document, count: Int): List<Coin> {
         val listCoins = transformToCoin(doc, count)
         this.list = listCoins
-        sortByPrice(list!!)
+        sortByPrice(list)
         Collections.reverse(list)
-        list?.let {
+        list.let {
             return it
         }
-
-        return listCoins
     }
 
-    fun convertToObjectHtmlLowPrice(doc: Document, count: Int): MutableList<Coin> {
+    fun convertToObjectHtmlLowPrice(doc: Document, count: Int): List<Coin> {
         val listCoins = transformToCoin(doc, count)
         this.list = listCoins
-        sortByPrice(list!!)
-        list?.let {
+        sortByPrice(list)
+        list.let {
             return it
         }
-
-        return listCoins
     }
 
-    fun convertToObjectHtmlMaxChange(doc: Document, count: Int): MutableList<Coin> {
+    fun convertToObjectHtmlMaxChange(doc: Document, count: Int): List<Coin> {
         val listCoins = transformToCoin(doc, count)
-        this.list = listCoins
-        sortByChange(list!!)
-        Collections.reverse(list)
-        list?.let {
-            return it
-        }
-
-        return listCoins
+        return listCoins.sortedWith(compareBy({it.change})).reversed()
+//
+//        val listCoins = transformToCoin(doc, count)
+//        this.list = listCoins
+//        sortByChange(list!!)
+//        Collections.reverse(list)
+//        list.let {
+//            return it
+//        }
     }
 
-    fun convertToObjectHtmlLowChange(doc: Document, count: Int): MutableList<Coin> {
+    fun convertToObjectHtmlLowChange(doc: Document, count: Int): List<Coin> {
         val listCoins = transformToCoin(doc, count)
-        this.list = listCoins
-        sortByChange(list!!)
-
-        list?.let {
-            return it
-        }
-
-        return listCoins
+        return listCoins.sortedWith(compareBy({it.change}))
     }
 
     private fun sortByChange(list: MutableList<Coin>) {
@@ -209,5 +197,16 @@ object JsoupService {
             sortByPrice(list, from, right - 1) // <-- pivot was wrong!
             sortByPrice(list, right + 1, to)   // <-- pivot was wrong!
         }
+    }
+
+    fun getListMenu(): MutableList<String> {
+
+        var list = mutableListOf<String>()
+        list.add("Mercado atual")
+        list.add("Moeda mais valorizada $")
+        list.add("Moeda menos valorizada $")
+        list.add("Moeda com maior % de crescimento")
+        list.add("Moeda com menor % de crescimento")
+        return list
     }
 }
