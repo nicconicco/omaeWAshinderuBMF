@@ -3,6 +3,7 @@ package com.bitcoinmercadofacil.bitcoinmercadofacil.Features.DetailCoin.Activity
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v4.content.ContextCompat
+import android.view.MenuItem
 import br.com.livroandroid.carros.extensions.fromJson
 import br.com.livroandroid.carros.extensions.toJson
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.DetailCoin.Model.Const.COIN
@@ -28,7 +29,7 @@ class DetailMoneyActivity : BaseActivity(), DetailMoneyContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_money)
-        setupToolbar(R.id.toolbar, getString(R.string.detalhe_da_moeda))
+        val actionBar = setupToolbar(R.id.toolbar, getString(R.string.detalhe_da_moeda), true)
 
         initPresenter()
         setInfosInView()
@@ -77,6 +78,16 @@ class DetailMoneyActivity : BaseActivity(), DetailMoneyContract.View {
 
             tChange.text = coin.changeString
             tPrice.text = coin.priceString
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.getItemId()) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }

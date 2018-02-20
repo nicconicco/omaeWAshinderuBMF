@@ -73,6 +73,9 @@ dependencies {
     //Jsoup html parser
     implementation 'org.jsoup:jsoup:1.11.2'
 
+    //Admobs
+    implementation 'com.google.android.gms:play-services-ads:11.8.0'
+
     // Config do Mockito e JUNit
     testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
     testImplementation 'junit:junit:4.12'

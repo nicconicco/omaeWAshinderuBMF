@@ -1,6 +1,7 @@
 package com.bitcoinmercadofacil.bitcoinmercadofacil
 
 import android.app.Application
+import com.google.android.gms.ads.MobileAds
 import io.realm.Realm
 
 
@@ -8,6 +9,7 @@ class NicoApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
+        MobileAds.initialize(this, "ca-app-pub-8826335474186276~8567017633")
         appInstance = this
         Realm.init(this)
     }

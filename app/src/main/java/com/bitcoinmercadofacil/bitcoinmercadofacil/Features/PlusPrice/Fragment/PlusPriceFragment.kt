@@ -13,6 +13,7 @@ import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Model.Coin
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Presenter.JsoupHtmlContract
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Presenter.JsoupHtmlPresenter
 import com.bitcoinmercadofacil.bitcoinmercadofacil.R
+import com.google.android.gms.ads.AdView
 import com.nico.projetopadroesnico.Common.Extension.goneView
 import com.nico.projetopadroesnico.Common.Extension.showView
 import com.nico.projetopadroesnico.Common.Fragment.BaseFragment
@@ -38,16 +39,22 @@ class PlusPriceFragment : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.
         return inflater.inflate(R.layout.fragment_plus_price, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         initViewButtons()
         initPresenter()
         initRecyclerView()
+
+        activity?.let {
+            presenter.showAdmobAtBottom(it, view.findViewById(R.id.adView) as AdView)
+        }
     }
 
     private fun initViewButtons() {
         btnAtualizar.setOnClickListener {
             presenter.loadHighPrice(this)
+            showAd()
         }
     }
 

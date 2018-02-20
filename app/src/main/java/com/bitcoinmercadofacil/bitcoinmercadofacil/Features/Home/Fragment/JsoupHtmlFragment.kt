@@ -13,7 +13,7 @@ import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Model.Coin
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Presenter.JsoupHtmlContract
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Presenter.JsoupHtmlPresenter
 import com.bitcoinmercadofacil.bitcoinmercadofacil.R
-import com.cognizant.dor.Common.Extensions.toast
+import com.google.android.gms.ads.AdView
 import com.nico.projetopadroesnico.Common.Extension.goneView
 import com.nico.projetopadroesnico.Common.Extension.showView
 import com.nico.projetopadroesnico.Common.Fragment.BaseFragment
@@ -39,32 +39,20 @@ class JsoupHtmlFragment : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.
         return inflater.inflate(R.layout.fragment_jsoup_html, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initViewButtons()
         initPresenter()
         initRecyclerView()
+        activity?.let {
+            presenter.showAdmobAtBottom(it, view.findViewById(R.id.adView) as AdView)
+        }
     }
 
     private fun initViewButtons() {
         btnAtualizar.setOnClickListener {
             presenter.loadHtml(this)
-        }
-
-        btnHighPrice.setOnClickListener {
-            presenter.loadHighPrice(this)
-        }
-
-        btnLowPrice.setOnClickListener {
-            presenter.loadLowPrice(this)
-        }
-
-        btnLowChange.setOnClickListener {
-            presenter.loadLowChange(this)
-        }
-
-        btnHighChange.setOnClickListener {
-            presenter.loadMaxChange(this)
+            showAd()
         }
     }
 
@@ -73,6 +61,7 @@ class JsoupHtmlFragment : BaseFragment() , JsoupHtmlContract.View, JsoupAdapter.
         presenter = JsoupHtmlPresenter()
         presenter.attachView(this)
         presenter.loadHtml(this)
+
     }
 
     private fun initRecyclerView() {

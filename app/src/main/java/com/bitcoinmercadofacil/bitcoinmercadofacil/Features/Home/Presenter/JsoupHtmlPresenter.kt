@@ -1,11 +1,16 @@
 package com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Presenter
 
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentActivity
 import br.com.livroandroid.carros.extensions.toJson
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.DetailCoin.Model.Const.HTML
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Model.Coin
 import com.bitcoinmercadofacil.bitcoinmercadofacil.Features.Home.Model.HttpService.JsoupService
+import com.bitcoinmercadofacil.bitcoinmercadofacil.R
 import com.cognizant.dor.Common.Extensions.task.startTask
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdSize
+import com.google.android.gms.ads.AdView
 import com.nico.projetopadroesnico.Common.Extension.isNetworkAvailable
 import org.jsoup.nodes.Document
 import timber.log.Timber
@@ -236,5 +241,13 @@ class JsoupHtmlPresenter : JsoupHtmlContract.Presenter {
         Timber.d("Lista final:\n${listCoins.toJson()}")
         view?.hidePorgress()
         view?.showParseHtml(listCoins)
+    }
+
+    fun showAdmobAtBottom(activity: FragmentActivity, mAdView: AdView) {
+        val adView = AdView(activity)
+        adView.adSize = AdSize.BANNER
+        adView.adUnitId = activity.getString(R.string.admob_bottom_id)
+        val adRequest = AdRequest.Builder().build()
+        mAdView.loadAd(adRequest)
     }
 }

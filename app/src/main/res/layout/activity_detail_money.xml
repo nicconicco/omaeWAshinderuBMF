@@ -132,31 +132,7 @@
 
                 </android.support.v7.widget.CardView>
 
-                <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:foreground="?attr/selectableItemBackground"
-                    app:cardBackgroundColor="@color/cinza_3"
-                    app:cardCornerRadius="3dp"
-                    app:cardElevation="3dp"
-                    app:cardPreventCornerOverlap="false"
-                    app:cardUseCompatPadding="false">
 
-                    <com.nico.projetopadroesnico.Common.View.RobotoTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:text="METER O LOKO"
-                        android:textColor="@color/preto_2"
-                        android:textSize="16sp" />
-
-                </android.support.v7.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
